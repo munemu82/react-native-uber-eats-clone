@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # My Universal React Project
 
 <p>
@@ -42,3 +43,17 @@ This project can be run from a web browser or the Expo client app. You may find 
 - Learn more about [Universal React](https://docs.expo.dev/).
 - See what API and components are [available in the React runtimes](https://docs.expo.dev/versions/latest/).
 - Find out more about developing apps and websites: [Guides](https://docs.expo.dev/guides/).
+=======
+# react-native-uber-eats-clone
+Clone of Uber Eats using React Native, Firebase and Google Technology
+
+**User guide**
+1. Navigate to Components/home folder, and open SearchBar.js, in this file, update google places api key in the GooglePlacesAutocomplete component
+2. Install packages with yarn or npm install.
+3. If you have native iOS code run npx pod-install
+4. Run yarn start to start the bundler.
+5. Open the project in a React runtime to try it:
+   - iOS: Client iOS
+   - Android: Client Android
+   - Web: Any web browser
+>>>>>>> fe5f0f858ff5ecebfb4502f59fb3cbbe1cde69fb
