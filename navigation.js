@@ -1,23 +1,30 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer } from '@react-navigation/native';
-import Home from './screens/Home';
-import RestaurantDetail from './screens/RestaurantDetail';
+import { NavigationContainer } from "@react-navigation/native";
+import Home from "./screens/Home";
+import RestaurantDetail from "./screens/RestaurantDetail";
+import { Provider as ReduxProvider } from "react-redux";
+import configureStore from "./redux/store";
+import OrderCompleted from "./screens/OrderCompleted";
+
+const store = configureStore();
 
 export default function RootNavigation() {
-    const Stack = createStackNavigator();
-    const screenOPtions = {
-        HeaderShown: false,
+  const Stack = createStackNavigator();
 
-    };
-    return (
-        <NavigationContainer>
-            <Stack.Navigator initialRouteName='Home' screenOptions={ screenOPtions } >
-                <Stack.Screen name='Home' component={ Home } />
-                <Stack.Screen name='RestaurantDetail' component={ RestaurantDetail} />
-            </Stack.Navigator>
-        </NavigationContainer>
-    )
+  const screenOptions = {
+    headerShown: false,
+  };
 
+  return (
+    <ReduxProvider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home" screenOptions={screenOptions}>
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="RestaurantDetail" component={RestaurantDetail} />
+          <Stack.Screen name="OrderCompleted" component={OrderCompleted} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </ReduxProvider>
+  );
 }
